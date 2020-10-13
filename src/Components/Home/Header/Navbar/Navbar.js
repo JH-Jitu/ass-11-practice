@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import menu from '../../../../images/menu.png';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../../App';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div className="container mb-2">
             <nav className="navbar navbar-expand-lg  nav-font">
@@ -12,21 +14,25 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse " id="navbarNav">
                     <ul className="navbar-nav ml-auto">
+                        <Link to="/adminControl"> <button style={{ backgroundColor: "#111430", textDecoration: "none", color: "white" }} className="nav-item btn px-4 h-75 btnLogin">
+                            Admin
+                        </button></Link>
                         <Link style={{ textDecoration: 'none' }} to="/home"><li className="nav-item active mr-3 p-1">
-                            <p className="nav-link text-dark" href="#">Home <span className="sr-only">(current)</span></p>
+                            <a className="nav-link text-dark" href="/">Home <span className="sr-only">(current)</span></a>
                         </li></Link>
                         <li className="nav-item mr-3 p-1">
-                            <a className="nav-link text-dark" href="#">Our Portfolio</a>
+                            <a className="nav-link text-dark" href="/">Our Portfolio</a>
                         </li>
                         <li className="nav-item mr-3 p-1">
-                            <a className="nav-link text-dark" href="#">Our Team</a>
+                            <a className="nav-link text-dark" href="/">Our Team</a>
                         </li>
                         <li className="nav-item mr-3 p-1">
-                            <a className="nav-link text-dark" href="#">Contact Us</a>
+                            <a className="nav-link text-dark" href="/">Contact Us</a>
                         </li>
-                        <button style={{backgroundColor: "#111430"}} className="nav-item btn px-4 h-100 btnLogin">
-                            <a className="nav-link text-light" href="#">Login</a>
-                        </button>
+                        {
+                loggedInUser.email ? <button style={{ backgroundColor: "#111430", textDecoration: "none", color: "white" }} className="nav-item btn px-4 h-75 btnLogin" onClick={() => setLoggedInUser({})}>Sign Out, {loggedInUser.name}</button> :
+                  <Link to="/login"><button style={{ backgroundColor: "#111430", textDecoration: "none", color: "white" }} className="nav-item btn px-4 h-75 btnLogin">Sign In</button></Link>
+              }
                     </ul>
                 </div>
             </nav>
