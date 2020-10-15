@@ -40,7 +40,10 @@ const AdminMaker = () => {
                     <Dashboard></Dashboard>
                 </div>
                 <div className="col-md-9">
+                <div className="d-flex justify-content-between">
                     <h4 className="bg-white">Add Admin</h4>
+                    <h4>{loggedInUser.name}</h4>
+                    </div>
                     <div className="adminService p-4">
                         <form action="" onSubmit={handleSubmit(onSubmitEvent)}>
                             <section style={{ height: "285px" }} className="addServiceSec">

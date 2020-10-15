@@ -4,7 +4,6 @@ import Dashboard from '../Dashboard';
 
 const AdminControl = () => {
     const [orders, setOrders] = useState([]);
-    const [redirect, setRedirect] = useState();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     // Database
@@ -13,7 +12,6 @@ const AdminControl = () => {
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
-                // setRedirect(true)
             })
     }, []);
 
@@ -40,8 +38,12 @@ const AdminControl = () => {
                     <Dashboard></Dashboard>
                 </div>
                 <div className="col-md-9">
-                    <h4 className="bg-white">Service List</h4>
+                    <div className="d-flex justify-content-between">
+                        <h4 className="bg-white">Service List</h4>
+                        <h4>{loggedInUser.name}</h4>
+                    </div>
                     <div className="adminService p-4">
+                        {orders.length === 0 && <h5 align="center">Loading..........Or, You didn't order anything</h5>}
                         <div style={{ borderRadius: "20px" }} className="bg-white p-3">
                             <div className="table-responsive">
                                 <table className="table bg-white table-borderless serveListBg" id="changed">

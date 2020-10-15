@@ -45,7 +45,7 @@ const OrderService = () => {
             .catch(error => {
                 console.error(error)
             })
-        history.push("/");
+        history.push("/userService");
     };
 
     return (
@@ -56,18 +56,21 @@ const OrderService = () => {
                     <Dashboard></Dashboard>
                 </div>
                 <div className="col-md-9">
+                <div className="d-flex justify-content-between">
                     <h4 className="bg-white">Order</h4>
+                    <h4>{loggedInUser.name}</h4>
+                    </div>
                     <div className="adminService p-4">
                         <form action="" onSubmit={handleSubmit(onSubmitEvent)}>
                             <section className="orderServe mt-5">
 
                                         <div className="mb-3">
-                                            <input style={{border: "none"}} defaultValue={loggedInUser.name} onBlur={handleBlur} className="w-100 mx-auto form-control" name="name" placeholder="Your Name/Company's Name" ref={register({ required: true })} />
+                                            <input style={{border: "none"}} onBlur={handleBlur} className="w-100 mx-auto form-control" name="name" placeholder="Your Name/Company's Name" ref={register({ required: true })} />
                                             {errors.eventName && <span className="error">Name is required</span>}
                                         </div>
 
                                         <div className="mb-3">
-                                            <input style={{border: "none"}} defaultValue={loggedInUser.email} onBlur={handleBlur} className="w-100 mx-auto form-control" name="email" placeholder="Your Email Address" ref={register({ required: true })} />
+                                            <input style={{border: "none"}} onBlur={handleBlur} className="w-100 mx-auto form-control" name="email" placeholder="Your Email Address" ref={register({ required: true })} />
                                             {errors.eventName && <span className="error">Email is required</span>}
                                         </div>
 

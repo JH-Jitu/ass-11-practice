@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import Dashboard from '../Dashboard';
 import './AdminAddService.css';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import { UserContext } from '../../../App';
 
 const AdminAddService = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, errors } = useForm();
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
@@ -23,7 +25,6 @@ const AdminAddService = () => {
     const history = useHistory();
     const onSubmitEvent = () => {
         const formData = new FormData()
-        console.log(info);
         formData.append('file', file);
         formData.append('name', info.name);
         formData.append('desc', info.desc);
@@ -33,9 +34,6 @@ const AdminAddService = () => {
             body: formData
         })
             .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
             .catch(error => {
                 console.error(error)
             })
@@ -50,7 +48,10 @@ const AdminAddService = () => {
                     <Dashboard></Dashboard>
                 </div>
                 <div className="col-md-9">
+                    <div className="d-flex justify-content-between">
                     <h4 className="bg-white">Add Service</h4>
+                    <h4>{loggedInUser.name}</h4>
+                    </div>
                     <div className="adminService p-4">
                         <form action="" onSubmit={handleSubmit(onSubmitEvent)}>
                             <section className="addServiceSec">

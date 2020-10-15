@@ -32,7 +32,10 @@ const ServiceList = () => {
                     <Dashboard></Dashboard>
                 </div>
                 <div className="col-md-9">
-                    <h4 className="bg-white">My Ordered Service(s)</h4>
+                <div className="d-flex justify-content-between">
+                    <h4 className="bg-white">My Service List</h4>
+                    <h4>{loggedInUser.name}</h4>
+                    </div>
                     <div className="adminService p-4">
                         <div>
                             {orders.length === 0 && <h5 align="center">Loading..........Or, You didn't order anything</h5>}

@@ -17,6 +17,7 @@ const Feedback = () => {
 
     return (
         <div className="container mb-5" id="review">
+            {feedbacks.length === 0 && <h1 align="center"> Please Wait......... </h1>}
             <h3 align="center"><b> Clients <strong className="text-danger"> Feedback </strong></b></h3>
             <div className="d-flex justify-content-center mt-3">
                 <div className="mx-auto w-100 row mt-2 pt-4">

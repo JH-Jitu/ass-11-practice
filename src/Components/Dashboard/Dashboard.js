@@ -24,21 +24,24 @@ const Dashboard = () => {
   const classes = useStyles();
   const [admin, setAdmin] = useState(false);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  
+
   useEffect(() => {
     fetch(`http://localhost:4200/findAdmin/${loggedInUser.email}`)
-        .then(res => res.json())
-        .then(data => {
-            setAdmin(data);
-            // setRedirect(true)
-        })
-}, [loggedInUser.email]);
+      .then(res => res.json())
+      .then(data => {
+        setAdmin(data);
+        // setRedirect(true)
+      })
+  }, [loggedInUser.email]);
 
   return (
-    
+
     <div>
-      <div className="d-flex justify-content-center">
-        <img style={{ width: "140px" }} src={logo} alt="" />
+      <div className="d-flex justify-content-center"> <Link to="/">
+        <img style={{ width: "140px" }} src={logo} alt="" /></Link>
+      </div>
+      <div className="text-center">
+        <small>Click on icon to go Home</small>
       </div>
       {/* Admin Panel */}
 
@@ -68,30 +71,30 @@ const Dashboard = () => {
       </admin> :
 
 
-      <user className="d-flex justify-content-center">
-        <div className="mt-3 p-2">
-          <List className={classes.root}>
-            <Link style={{ textDecoration: "none" }} to="/orderService">
-              <div className="btn d-flex justify-content-start btnDashboard">
-                <ShoppingCartIcon></ShoppingCartIcon>
-                <p className="ml-2">Order</p>
-              </div>
-            </Link>
-            <Link style={{ textDecoration: "none" }} to="/userService">
-              <div className="btn d-flex justify-content-start btnDashboard">
-                <RoomServiceIcon></RoomServiceIcon>
-                <p className="ml-2">Service List</p>
-              </div>
-            </Link>
-            <Link style={{ textDecoration: "none" }} to="/userReview">
-              <div className="btn d-flex justify-content-start btnDashboard">
-                <RateReviewIcon></RateReviewIcon>
-                <p className="ml-2">Review</p>
-              </div>
-            </Link>
-          </List>
-        </div>
-      </user>}
+        <user className="d-flex justify-content-center">
+          <div className="mt-3 p-2">
+            <List className={classes.root}>
+              <Link style={{ textDecoration: "none" }} to="/orderService">
+                <div className="btn d-flex justify-content-start btnDashboard">
+                  <ShoppingCartIcon></ShoppingCartIcon>
+                  <p className="ml-2">Order</p>
+                </div>
+              </Link>
+              <Link style={{ textDecoration: "none" }} to="/userService">
+                <div className="btn d-flex justify-content-start btnDashboard">
+                  <RoomServiceIcon></RoomServiceIcon>
+                  <p className="ml-2">Service List</p>
+                </div>
+              </Link>
+              <Link style={{ textDecoration: "none" }} to="/userReview">
+                <div className="btn d-flex justify-content-start btnDashboard">
+                  <RateReviewIcon></RateReviewIcon>
+                  <p className="ml-2">Review</p>
+                </div>
+              </Link>
+            </List>
+          </div>
+        </user>}
 
     </div>
   );
