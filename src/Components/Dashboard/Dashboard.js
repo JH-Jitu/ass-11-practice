@@ -26,7 +26,7 @@ const Dashboard = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:4200/findAdmin/${loggedInUser.email}`)
+    fetch(`https://protected-ridge-51835.herokuapp.com/findAdmin/${loggedInUser.email}`)
       .then(res => res.json())
       .then(data => {
         setAdmin(data);

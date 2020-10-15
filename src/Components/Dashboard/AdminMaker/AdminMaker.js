@@ -18,7 +18,7 @@ const AdminMaker = () => {
         const formData = new FormData()
         formData.append('email', admin.email);
 
-        fetch('http://localhost:4200/addAdmin', {
+        fetch('https://protected-ridge-51835.herokuapp.com/addAdmin', {
             method: 'POST',
             body: formData
         })

@@ -10,7 +10,7 @@ const ServiceList = () => {
 
     // Individual data for every user
     useEffect(() => {
-        fetch(`http://localhost:4200/orders?email=${loggedInUser.email}`, {
+        fetch(`https://protected-ridge-51835.herokuapp.com/orders?email=${loggedInUser.email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

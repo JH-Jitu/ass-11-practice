@@ -8,7 +8,7 @@ const Services = () => {
     
     // Database
     useEffect(() =>{
-        fetch("http://localhost:4200/services")
+        fetch("https://protected-ridge-51835.herokuapp.com/services")
         .then(res => res.json())
         .then(data => {
             setServices(data)

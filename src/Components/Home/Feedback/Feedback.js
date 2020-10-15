@@ -7,7 +7,7 @@ const Feedback = () => {
     
     // Database
     useEffect(() =>{
-        fetch("http://localhost:4200/getReview")
+        fetch("https://protected-ridge-51835.herokuapp.com/getReview")
         .then(res => res.json())
         .then(data => {
             setFeedbacks(data)
