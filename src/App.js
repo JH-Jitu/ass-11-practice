@@ -47,9 +47,7 @@ function App() {
                 {admin ? <AdminControl></AdminControl> : <ServiceList></ServiceList>}
               </PrivateRoute>
               
-              {admin ? <div> <PrivateRoute path="/dashboard" >
-                <Dashboard></Dashboard>
-              </PrivateRoute>
+              {admin ? <div> 
               <PrivateRoute path="/dashboard/:serviceLink">
                 <AdminControl></AdminControl>
               </PrivateRoute>
@@ -64,9 +62,6 @@ function App() {
               </PrivateRoute> </div> :
 
               <div>
-              <PrivateRoute path="/dashboard" >
-                <Dashboard></Dashboard>
-              </PrivateRoute>
               <PrivateRoute path="/dashboard/:serviceLink">
                 <OrderService></OrderService>
               </PrivateRoute>
