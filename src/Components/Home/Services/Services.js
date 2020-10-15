@@ -17,10 +17,6 @@ const Services = () => {
         })
     }, [redirect, search]);
     
-    const handleSearch = event => {
-        setSearch(event.target.value)
-    }
-    
     return (
         <div className="container">
             <h3 align="center"><b> Provide awesome <strong className="text-danger"> services </strong> </b></h3>

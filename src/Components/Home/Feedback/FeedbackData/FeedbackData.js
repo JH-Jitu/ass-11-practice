@@ -1,3 +1,4 @@
+import { Avatar } from '@material-ui/core';
 import React from 'react';
 
 const FeedbackData = ({ feedback }) => {
@@ -5,7 +6,7 @@ const FeedbackData = ({ feedback }) => {
         <div className="col-md-4">
             <div style={{ borderRadius: '5px' }} className="m-1 border border-1 p-4">
                 <div className="d-flex justify-content-start">
-                    <div> <img style={{ height: '45px', borderRadius: '100%' }} src={feedback.img} alt="" /></div>
+                    <Avatar src={feedback.photo}></Avatar>
                     <div>
                         <h5 className="ml-3"><strong>{feedback.name}</strong> </h5>
                         <h6 className="ml-3"><strong> {feedback.desig}</strong></h6></div>
