@@ -18,7 +18,7 @@ const Services = () => {
     }, [redirect, search]);
     
     return (
-        <div className="container">
+        <div className="container" id="service">
             <h3 align="center"><b> Provide awesome <strong className="text-danger"> services </strong> </b></h3>
             <div className="d-flex justify-content-center">
                 <div className="mx-auto w-100 row mt-2 pt-5">

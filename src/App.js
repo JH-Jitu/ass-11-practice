@@ -43,6 +43,9 @@ function App() {
               <Route path="/login">
                 <Login></Login>
               </Route>
+              <PrivateRoute path="/admin_user" >
+                {admin ? <AdminControl></AdminControl> : <ServiceList></ServiceList>}
+              </PrivateRoute>
               
               {admin ? <div> <PrivateRoute path="/dashboard" >
                 <Dashboard></Dashboard>

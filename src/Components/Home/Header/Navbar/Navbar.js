@@ -14,20 +14,23 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse " id="navbarNav">
                     <ul className="navbar-nav ml-auto">
-                        <Link to="/adminControl"> <button style={{ backgroundColor: "#111430", textDecoration: "none", color: "white" }} className="nav-item btn px-4 h-75 btnLogin">
-                            Admin
+                        <Link to="/admin_user"> <button style={{ backgroundColor: "#111430", textDecoration: "none", color: "white" }} className="nav-item btn px-4 h-75 btnLogin">
+                            Admin/User Panel
                         </button></Link>
                         <Link style={{ textDecoration: 'none' }} to="/home"><li className="nav-item active mr-3 p-1">
-                            <a className="nav-link text-dark" href="/">Home <span className="sr-only">(current)</span></a>
+                            <p className="nav-link text-dark">Home <span className="sr-only">(current)</span></p>
                         </li></Link>
                         <li className="nav-item mr-3 p-1">
-                            <a className="nav-link text-dark" href="/">Our Portfolio</a>
+                            <a className="nav-link text-dark" href="#carousel">Our Portfolio</a>
                         </li>
                         <li className="nav-item mr-3 p-1">
-                            <a className="nav-link text-dark" href="/">Our Team</a>
+                            <a className="nav-link text-dark" href="#service">Our Service</a>
                         </li>
                         <li className="nav-item mr-3 p-1">
-                            <a className="nav-link text-dark" href="/">Contact Us</a>
+                            <a className="nav-link text-dark" href="#review">Review</a>
+                        </li>
+                        <li className="nav-item mr-3 p-1">
+                            <a className="nav-link text-dark" href="#footer">Contact Us</a>
                         </li>
                         {
                 loggedInUser.email ? <button style={{ backgroundColor: "#111430", textDecoration: "none", color: "white" }} className="nav-item btn px-4 h-75 btnLogin" onClick={() => setLoggedInUser({})}>Sign Out, {loggedInUser.name}</button> :

@@ -65,22 +65,14 @@ const AdminControl = () => {
                                                     <td>
                                                         {/* <form onSubmit={handleSubmit(onSubmitEvent)} action=""> */}
                                                         <select name="status" onChange={(e) => handleChange(e, order._id, order.name, order.service)} style={{ border: "none" }}>
-                                                            <option value="pending">Pending</option>
+                                                            <option value="Pending">Pending</option>
                                                             <option value="done">Done</option>
-                                                            <option value="onGoing">On Going</option>
+                                                            <option value="On Going">On Going</option>
                                                             {order.status && <option selected>{order.status}</option>}
                                                         </select>
                                                         {/* </form> */}
 
                                                     </td>
-                                                    {/* <td>
-                                            <select className="form-control" onChange={(e) => statusChange(order._id, e)} name="status">
-                                                {
-                                                    statuses.map(option =>
-                                                        <option key={option} value={option} selected={option === order.status}>{option}</option>)
-                                                }
-                                            </select>
-                                        </td> */}
                                                 </tr>)
                                         }
                                     </tbody>

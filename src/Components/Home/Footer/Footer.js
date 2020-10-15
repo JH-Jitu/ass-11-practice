@@ -9,7 +9,7 @@ const Footer = () => {
                         <h2><b> Let us handle your <br /> project, professionally </b></h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum molestias et architecto eligendi ea, recusandae doloribus reiciendis nobis, culpa at laudantium unde, nesciunt perspiciatis repudiandae maiores ratione eos quos.</p>
                     </div>
-                    <div className="col-md-6 offset-md-1 mt-5">
+                    <div className="col-md-6 offset-md-1 mt-5" id="footer">
                         <form>
                             <div className="form-group">
                                 <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Your email address" />

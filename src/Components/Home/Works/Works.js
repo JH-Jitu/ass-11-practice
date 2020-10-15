@@ -16,7 +16,7 @@ const breakPoints = [
 ];
 const Works = () => {
     return (
-        <div className="servicesSec mb-5">
+        <div className="servicesSec mb-5" id="carousel">
             <div className="mt-5 p-5 text-light"><h3 className="mt-4" align="center"><b> Here are Some of <strong className="text-danger">Our Works</strong></b></h3></div>
             <div className="container carouselEdit">
             <Carousel breakPoints = {breakPoints}>

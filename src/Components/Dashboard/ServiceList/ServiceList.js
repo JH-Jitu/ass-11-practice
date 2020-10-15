@@ -42,7 +42,7 @@ const ServiceList = () => {
                                         <div style={{ borderRadius: '10px' }} className="bg-white m-2 p-4">
                                             <div className="d-flex justify-content-between">
                                                 <img style={{ width: '50px' }} src={`data:image/png;base64,${order.image.img}`} alt="" />
-                                                <p className="btn btnUpload"></p>
+                                <p className="btn btnUpload">{order.status ? order.status : "Pending"}</p>
                                             </div> <br />
                                             <h6><b> {order.service}</b></h6>
                                             <p>{order.desc}</p>
